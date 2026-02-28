@@ -18,14 +18,18 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // Apply rate limiting to all API routes
 app.use('/api', apiLimiter);
 
+const path = require('path');
+
 // Routes
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
 
-app.get('/', (req, res) => {
-  res.send('AI Customer Support Backend is running!');
-});
+// Serve static frontend files in production
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
 // Database Connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/support-ai-app';
 

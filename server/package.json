@@ -15,7 +15,8 @@
     "express-validator": "^7.3.1",
     "helmet": "^8.1.0",
     "mongoose": "^7.6.3",
-    "openai": "^4.14.2"
+    "openai": "^4.14.2",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
