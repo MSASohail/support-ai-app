@@ -1,0 +1,14 @@
+{
+    "name": "support-ai-app-root",
+    "version": "1.0.0",
+    "description": "Root script for AI Customer Support App",
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd server && npm run dev",
+        "client": "cd client && npm run dev",
+        "install-all": "cd server && npm install && cd ../client && npm install"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
