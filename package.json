@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Root script for AI Customer Support App",
     "scripts": {
+        "build": "cd client && npm run build",
         "start": "concurrently \"npm run server\" \"npm run client\"",
         "server": "cd server && npm run dev",
         "client": "cd client && npm run dev",
